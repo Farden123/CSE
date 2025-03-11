@@ -1,0 +1,366 @@
+
+Task_01==================================================================>
+
+import java.util.*;
+class A_01 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    int end = 10;
+    int sum = 0;
+    int max = 0;
+    int min = -1;
+    int count = 0;
+    int start = 0;
+
+    for (; start < end; start++) {
+      int num = sun.nextInt();
+      if (num > 0 && num % 2 != 0) {
+        sum = sum + num;
+        if (count == 0) {
+          min = num;
+          max = num;
+        } 
+        else {
+          if (num > max) {
+            max = num;
+          }
+          if (num < min) {
+            min = num;
+          }
+        }
+        count++;
+      }
+    }
+
+    if (count > 0) {
+      System.out.println("Sum = " + sum);
+      System.out.println("Minimum = " + min);
+      System.out.println("Maximum = " + max);
+      System.out.println("Average = " + ((double) sum / count));
+    }
+
+    else {
+      System.out.println("No odd positive numbers found");
+    }
+    sun.close();
+  }
+
+}
+
+
+
+
+Task_02==========================================================================================================>
+
+import java.util.*;
+class A_02 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    int sun_1 = sun.nextInt();
+    int sun_2 = sun.nextInt();
+
+    int Start;
+    int End;
+    int m;
+    int n;
+    int count = 0;
+
+    if (sun_1 > sun_2) {
+      Start = sun_2;
+      End = sun_1;
+    } 
+     else {
+      Start = sun_1;
+      End = sun_2;
+    }
+
+    for (m = Start; m <= End; m++) {
+      if (m > 1) {
+        for (n = 2; n <= Math.sqrt(m); n++) {
+          if (m % n == 0) {
+            break;
+          }
+        }
+        if (n > Math.sqrt(m)) {
+          count++;
+        }
+      }
+    }
+    System.out.println("There are " + count + " prime numbers between " + sun_1 + " and " + sun_2 + ".");
+    sun.close();
+  }
+}
+
+
+
+
+Task_03================================================================>
+
+import java.util.*;
+class A_3 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    String sun_1 = sun.nextLine();
+    String sun_2 = sun.nextLine();
+    String concatenated = (sun_1 + " " + sun_2);
+    int sum = 0;
+
+    for (int i = 0; i < concatenated.length(); i++) {
+      char d = concatenated.charAt(i);
+      int value = (int) d;
+      if (value >= 65 && value <= 90 || value >= 97 && value <= 122) {
+
+        sum = sum + value;
+
+      }
+
+    }
+    System.out.println(concatenated);
+    System.out.println(sum);
+    sun.close();
+
+  }
+}
+
+
+
+Task_04====================================================>
+
+import java.util.*;
+class A_04 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    String sun_1 = sun.nextLine().toLowerCase();
+    // to avoid uppercase characters
+    String empty = "";
+
+    for (int i = 0; i < sun_1.length(); i++) {
+      char sun_2 = sun_1.charAt(i);
+
+      if (sun_2 >= 97 && sun_2 <= 122) {
+
+        if (sun_2 == 'a') {
+          empty = empty + 'z';
+        } else {
+          empty = empty + (char) (sun_2 - 1);
+        }
+
+      }
+
+    }
+    System.out.println(empty);
+    sun.close();
+  }
+}
+
+
+
+
+Task_05====================================================>
+
+import java.util.*;
+class A_05 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    System.out.print("Enter the length of the array: ");
+    int sun_1 = sun.nextInt();
+    int sun_2[] = new int[sun_1];
+    int temp;
+    int open;
+    int end;
+
+    for (open = 0; open < sun_2.length; open++) {
+      sun_2[open] = sun.nextInt();
+    }
+
+    for (open = 0; open < sun_2.length / 2; open++) {
+      end = sun_2.length - 1 - open;
+      temp = sun_2[open];
+      sun_2[open] = sun_2[end];
+      sun_2[end] = temp;
+    }
+
+    for (open = 0; open < sun_2.length; open++) {
+      System.out.print(sun_2[open] + " ");
+    }
+    sun.close();
+  }
+}
+
+
+
+
+Task_06============================================================>
+
+import java.util.*;
+class A_06 {
+  public static void main(String[] args) {
+    Scanner sad = new Scanner(System.in);
+    System.out.print("N = ");
+    int sun = sad.nextInt();
+    int sun_1[] = new int[sun];
+    boolean sun_2 = false;
+    int count = 0;
+
+    for (int x = 0; x < sun_1.length; x++) {
+      sun_1[x] = sad.nextInt();
+
+    }
+    for (int x = 0; x < sun; x++) {
+      count = 1;
+      for (int p = 0; p < x; p++) {
+        if (sun_1[x] == sun_1[p]) {
+          sun_2 = true;
+          break;
+        }
+
+      }
+      if (sun_2) {
+        continue;
+      }
+
+      for (int p = x + 1; p < sun; p++) {
+        if (sun_1[x] == sun_1[p]) {
+          count++;
+        }
+      }
+      System.out.println(sun_1[x] + " - " + count + " times");
+
+    }
+    sad.close();
+
+  }
+
+}
+
+
+
+
+Task_07=====================================================================>
+
+import java.util.*;
+class A_07 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+    System.out.print("N = ");
+    int num = sun.nextInt();
+    double sun_1[] = new double[num];
+    System.out.println("Please enter the elements of the array:");
+    int count = 0;
+    int check;
+    // boolean first = true;
+
+    for (int x = 0; x < num; x++) {
+
+      sun_1[x] = sun.nextDouble();
+    }
+    double sun_2[] = new double[num];
+    // sun_1[0] = sun_2[0];
+    sun_2[0] = sun_1[0];
+    check = 1;
+
+    for (int x = 1; x < num; x++) {
+      if (sun_1[x] != sun_1[x - 1]) {
+        // sun_1[x] = sun_2[index];
+        sun_2[check] = sun_1[x];
+        check++;
+      } else {
+        count++;
+      }
+    }
+    System.out.print("New Array: ");
+
+    for (int p = 0; p < check; p++) {
+      System.out.print(sun_2[p] + " ");
+    }
+    System.out.println();
+    System.out.println("Removed elements : " + count);
+    sun.close();
+
+  }
+
+}
+
+
+
+
+
+Task_08========================================================================>
+
+import java.util.*;
+class A_08 {
+  public static void main(String args[]) {
+    Scanner sun = new Scanner(System.in);
+
+    System.out.print("row = ");
+    int sun_1 = sun.nextInt();
+    System.out.print("column = ");
+    int sun_2 = sun.nextInt();
+    int sun_3[][] = new int[sun_1][sun_2];
+
+    for (int initial = 0; initial < sun_1; initial++) {
+      for (int ending = 0; ending < sun_2; ending++) {
+        sun_3[initial][ending] = sun.nextInt();
+      }
+    }
+
+    System.out.println(" ");
+    System.out.println("2D Array: ");
+
+    for (int initial = 0; initial < sun_3.length; initial++) {
+      for (int ending = 0; ending < sun_3[initial].length; ending++) {
+        System.out.print(sun_3[initial][ending] + " ");
+      }
+      System.out.println();
+    }
+
+    System.out.println(" ");
+    System.out.println("1D Array: ");
+
+    for (int initial = 0; initial < sun_3.length; initial++) {
+      for (int ending = 0; ending < sun_3[initial].length; ending++) {
+        System.out.print(sun_3[initial][ending] + " ");
+      }
+    }
+    System.out.println();
+    sun.close();
+  }
+}
+
+
+
+
+Task_09=======================================================================>
+
+//import java.util.*;
+class A_09 {
+  public static void main(String args[]) {
+    // Scanner sun = new Scanner(System.in);
+    // int a = sun.nextInt();
+    // int b = sun.nextInt();
+    boolean flag = true;
+
+    int A[][] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+
+    // int A [][]= new int[a][b];
+
+    for (int x = 0; x < A.length; x++) {
+      for (int p = 0; p < A.length; p++) {
+
+        if ((x == p && A[x][p] != 1) == flag || (x != p && A[x][p] != 0) == flag) {
+          flag = false;
+          break;
+        }
+      }
+    }
+    if (flag == true) {
+      System.out.println("Identity Matrix");
+    } else if (flag == false) {
+      System.out.println("Not Identity Matrix");
+    }
+    // sun.close();
+
+  }
+}
+
+
