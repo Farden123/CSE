@@ -1,0 +1,267 @@
+//Assignment_03===================>
+//ID_24101620
+//Section: 17
+
+
+Task_01============================================================>
+
+class BankAccount {
+  public int num;
+  public String type;
+
+  BankAccount(int num, String type) {
+    this.num = num;
+    this.type = type;
+  }
+
+  BankAccount() {
+    type = "Not Set";
+  }
+
+  String printDetails() {
+    return ("Account No: " + this.num + " \nType: " + this.type);
+
+  }
+
+  public void setInfo(int num, String type) {
+    this.num = num;
+    this.type = type;
+    System.out.println("Account information updated!");
+  }
+
+}
+
+
+
+//Task_02=============================================================>
+
+class Shape {
+  public String name;
+  public double area;
+
+  public void setParameters(String shapeName, int radius) {
+    this.name = shapeName;
+    this.area = (3.14159 * radius * radius);
+  }
+
+  public void setParameters(String shapeName, int H, int B) {
+    this.name = shapeName;
+    this.area = (0.5 * H * B);
+  }
+
+  public void setParameters(String shapeName, double L, double W) {
+    this.name = shapeName;
+    this.area = (L * W);
+  }
+
+  public String details() {
+    return ("Shape Name: " + name + "\nArea: " + area);
+  }
+
+}
+
+
+
+//Task_03==============================================================>
+
+class Shelf {
+  public int capacity;
+  public int book;
+
+  Shelf() {
+    this.capacity = 0;
+    this.book = 0;
+  }
+
+  public void showDetails() {
+    System.out.println("Shelf capacity: " + capacity);
+    System.out.println("Number of books: " + book);
+
+  }
+
+  public void addBooks(int n) {
+    if (capacity == 0) {
+      System.out.println("Zero capacity. Cannot add books.");
+
+    } else if ((n + book) > capacity) {
+      System.out.println("Exceeds capacity");
+    } else {
+      book = book + n;
+      System.out.println(n + " books added to shelf");
+    }
+
+  }
+
+}
+
+
+
+
+//Task_04================================================================>
+
+class Student {
+  public String name;
+  public String department;
+  public double cgpa;
+  public int credit;
+  public String scholarship;
+
+  Student() {
+    this.name = "Not Set";
+    this.department = "CSE";
+    this.cgpa = 0.0;
+    this.credit = 9;
+    this.scholarship = "Not Set";
+  }
+
+  public void updateDetails(String name, double cgpa, int credit) {
+    this.name = name;
+    this.cgpa = cgpa;
+    this.credit = credit;
+  }
+
+  public void updateDetails(String name, double cgpa) {
+    this.name = name;
+    this.cgpa = cgpa;
+  }
+
+  public void updateDetails(String name, double cgpa, int credit, String department) {
+    this.name = name;
+    this.cgpa = cgpa;
+    this.credit = credit;
+    this.department = department;
+  }
+
+  public void showDetails() {
+    System.out.println("Name: " + this.name);
+    System.out.println("Department: " + this.department);
+    System.out.println("CGPA: " + this.cgpa);
+    System.out.println("Credits: " + this.credit);
+    System.out.println("Scholarship Status: " + this.scholarship);
+  }
+
+  public void checkScholarshipEligibility() {
+    if (this.cgpa >= 3.5 && this.credit >= 9) {
+      if (this.cgpa >= 3.7) {
+        scholarship = "Merit based scholarship";
+      } else {
+        scholarship = "Need based scholarship";
+      }
+      System.out.println(name + " is eligible for " + scholarship);
+    } else {
+      scholarship = "No scholardhip";
+      System.out.println(name + " is not eligible for scholarship");
+    }
+  }
+}
+
+
+
+//Task_05=====================================================>
+
+class Library {
+  public int capacity;
+  public String book[];
+  public int count;
+
+  Library() {
+    this.count = 0;
+  }
+
+  public void setBookCapacity(int capacity) {
+    this.capacity = capacity;
+    this.book = new String[capacity];
+  }
+
+  public void printDetail() {
+    System.out.println("Maximum capacity: " + capacity);
+    System.out.println("Total Books: " + count);
+    System.out.println("Book list: ");
+    Book_List();
+  }
+
+  public void Book_List() {
+    for (int z = 0; z < count; z++) {
+      System.out.println(book[z]);
+    }
+  }
+
+  public void addBook(String name) {
+    if (capacity > count) {
+      this.book[count] = name;
+      count++;
+      System.out.println("Book '" + name + "' added to the library");
+
+    } else {
+      System.out.println("Exceeds maximum capacity. You can't add more than " + capacity + " books");
+    }
+  }
+}
+
+
+
+//Task_06===============================================>
+
+class TaxiLagbe {
+
+  public String num;
+  public String cover;
+  public String passenger[] = new String[4];
+  public int fare;
+  public int count;
+
+  TaxiLagbe() {
+    this.fare = 0;
+    this.count = 0;
+  }
+
+  public void storeInfo(String num, String cover) {
+    this.num = num;
+    this.cover = cover;
+  }
+
+  public void Sun() {
+    for (int z = 0; z < count; z++) {
+      System.out.print(passenger[z] + " ");
+
+    }
+  }
+
+  public void printDetails() {
+    System.out.println("Taxi Number: " + num);
+    System.out.println("This taxi can cover " + cover + " area");
+    System.out.println("Total passenger: " + count);
+    System.out.println("Passenger Lists: ");
+    Sun();
+    System.out.println("\nTotal collected fare: " + fare + " Taka");
+
+  }
+
+  public void addPassenger(String num1, int fare1) {
+    if (count < 4) {
+      this.passenger[count] = num1;
+      count++;
+      this.fare += fare1;
+      System.out.println("Dear " + num1 + "! Welcome to TaxiLagbe");
+    } else if (count > 4) {
+      System.out.println("Taxi Full! No more passenger can be added");
+    }
+  }
+
+  public void addPassenger(String num1, int fare1, String num2, int fare2) {
+    addPassenger(num1, fare1);
+    addPassenger(num2, fare2);
+  }
+
+}
+
+
+
+//Task_07==========================>
+Need ST Help
+
+//Task_08==========================>
+Need ST Help
+
+
+
