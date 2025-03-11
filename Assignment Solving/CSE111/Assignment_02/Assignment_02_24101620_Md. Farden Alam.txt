@@ -1,0 +1,189 @@
+//Assignment_02=>
+
+
+//Task_01==============================>
+
+class UniversityTester {
+  public static void main(String args[]) {
+
+    University Educated = new University();
+    University Uneducated = new University();
+
+    System.out.println(Educated); // Location
+    System.out.println(Uneducated); // Location
+
+    System.out.println(Educated == Uneducated); // False
+
+    Educated.name = "Imperial College London";
+    System.out.println(Educated.name);
+    Educated.country = "England";
+    System.out.println(Educated.country);
+
+    Uneducated.name = "BRAC University";
+    System.out.println(Uneducated.name);
+    Uneducated.country = "Bangladesh";
+    System.out.println(Uneducated.country);
+
+    System.out.println("ICL = " + Educated.name);
+    System.out.println("Eng = " + Educated.country);
+
+    System.out.println("BU = " + Uneducated.name);
+    System.out.println("BD = " + Uneducated.country);
+
+    System.out.println(Educated.name.equals(Uneducated.name));
+    System.out.println(Educated.country.equals(Uneducated.country));
+
+    // Each object have separate instance variables
+    // Changing one object instance variables doesn't effect so.
+
+  }
+}
+
+
+
+//Task_02============================>
+
+class Student {
+  public String name;
+  public int id;
+
+  Student() {
+    this.name = "Default";
+    this.id = 0;
+
+  }
+}
+
+
+
+//Task_03======================>
+
+class CSECourse {
+  public String courseName = "Programming Language II";
+  public String courseCode = "CSE111";
+  public int credit = 3;
+}
+
+
+
+//Task_04============================>
+
+class ImaginaryNumber {
+
+  public int realPart;
+  public int imaginaryPart;
+
+  ImaginaryNumber() {
+    this.realPart = 0;
+    this.imaginaryPart = 0;
+
+  }
+
+  public void printNumber() {
+    System.out.println(realPart + " + " + imaginaryPart + "i");
+  }
+}
+
+
+
+//Task_05====================================================================================>
+
+class Course {
+  public String course_name;
+  public String course_code;
+  int course_id;
+
+  Course() {
+
+  }
+
+  public void updateDetails(String Courses_name, String courses_code, int courses_credit) {
+    this.course_name = Courses_name;
+    this.course_code = courses_code;
+    course_id = courses_credit;
+
+  }
+
+  public void displayCourse() {
+    System.out.println("Course Name: " + course_name);
+    System.out.println("Course Code: " + course_code);
+    System.out.println("Course Credit: " + course_id);
+  }
+
+}
+
+
+
+//Task_06========================================================>
+
+class Assignment {
+  public int tasks;
+  public String difficulty;
+  public boolean submission;
+
+  public void printDetails() {
+    System.out.println("Number of Tasks: " + tasks);
+    System.out.println("Difficulty level: " + difficulty);
+    System.out.println("Submission required: " + submission);
+  }
+
+  public String makeOptional() {
+    if (submission == true) {
+      return "Assignment will not require submission";
+    } else if (submission == false) {
+      return "Submission is already not required";
+    } else {
+      return "Empty";
+    }
+    // return "";
+  }
+
+}
+
+
+//Task_07=========================================================>
+
+
+
+class CellPhone {
+  public String model;
+  public String Contact_List[] = new String[5];
+  public int Count;
+  int xro;
+
+  CellPhone() {
+    model = "Unknown";
+    Count = 0;
+    xro = 0;
+  }
+
+  public void printDetails() {
+    System.out.println("Phone Model " + model);
+    System.out.println("Contacts Stored " + Count);
+    if (Count > 0) {
+      System.out.println("Stored Contacts: ");
+      for (xro = 0; xro < Count; xro++) {
+        System.out.println(Contact_List[xro]);
+      }
+
+    }
+  }
+
+  public void storeContact(String contact) {
+    if (Count < 3) {
+      Contact_List[Count] = contact;
+      Count++;
+      System.out.println("Contact Stored");
+    } else if (Count > 3) {
+      System.out.println("Memory full. New contact can't be stored.");
+
+    } else {
+
+    }
+
+  }
+}
+
+
+
+
