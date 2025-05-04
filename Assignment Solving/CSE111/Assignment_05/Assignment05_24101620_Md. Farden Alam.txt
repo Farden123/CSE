@@ -1,0 +1,41 @@
+
+
+Task_01==============================================>
+
+class Song {
+  public String sun;
+  public String sun_1;
+  public int sun_2;
+
+  public Song(String name, String name_2, int name_3) {
+    this.sun = name;
+    this.sun_1 = name_2;
+    this.sun_2 = name_3;
+
+  }
+
+  public void songInfo() {
+    System.out.println("Title: " + sun + ", " + "Artist: " + sun_1 + ", " + "Length: " + sun_2 + " minutes");
+
+  }
+}
+
+
+Task_02===================================>
+
+class Playlist {
+  String name;
+
+  public Playlist(String sun_3) {
+    this.name = sun_3;
+    System.out.println(name + " " + "created.");
+
+  }
+}
+
+
+Task_03====================================>
+
+
+
+
