@@ -1,0 +1,245 @@
+
+Assignment-4===>
+
+
+Task_01===========================================>
+
+class Student {
+  public String name;
+  public String prog;
+
+  public Student(String name, String prog) {
+    this.name = name;
+    this.prog = prog;
+
+  }
+
+  public void updateName(String name) {
+    this.name = name;
+  }
+
+  public void updateProgram(String prog) {
+    this.prog = prog;
+  }
+
+  public String accessProgram() {
+    this.prog = prog;
+    return prog;
+  }
+}
+
+
+
+Task_02============================================>
+
+class Toy {
+  String name;
+  int taka;
+
+  public Toy(String name, int taka) {
+    this.name = name;
+    this.taka = taka;
+    System.out.println("A new toy has been made!");
+
+  }
+
+  public void updatePrice(int taka) {
+    this.taka = taka;
+  }
+
+  public void showPrice() {
+    System.out.println("price: " + this.taka + " Taka");
+  }
+
+  public void updateName(String name_2) {
+    System.out.println("Changing old name: " + this.name);
+    this.name = name_2;
+    System.out.println("new name: " + this.name);
+
+  }
+
+}
+
+
+Task_03========================================>
+
+
+
+class Shape2D {
+  double long_length;
+  double height;
+  double base;
+  double s1, s2, s3;
+  double short_length;
+
+  String name;
+
+  public Shape2D() {
+    this.long_length = 5;
+    this.name = "Square";
+    System.out.println("A Square has been created with length: " + (int) long_length);
+  }
+
+  public Shape2D(double long_length, double short_length) {
+    this.long_length = long_length;
+    this.short_length = short_length;
+    this.name = "Rectangle";
+    System.out.println(
+        "A Rectangle has been created with length: " + (int) long_length + " and breadth: " + (int) short_length);
+  }
+
+  public Shape2D(double height, double base, String name) {
+    this.height = height;
+    this.base = base;
+    this.name = "Triangle";
+    System.out.println("A Triangle has been created with height: " + (int) height + " and base: " + (int) base);
+
+  }
+
+  public Shape2D(double s1, double s2, double s3) {
+    this.s1 = s1;
+    this.s2 = s2;
+    this.s3 = s3;
+    this.name = "Triangle";
+    System.out.println(
+        "A Triangle has been created with the following sides: " + (int) s1 + ", " + (int) s2 + ", " + (int) s3);
+
+  }
+
+  public void area() {
+    if (name.equals("Square")) {
+      double a = (long_length * long_length);
+      System.out.println("The area of the Square is: " + a);
+    } else if (name.equals("Rectangle")) {
+      double b = (long_length * short_length);
+      System.out.println("The area of the Rectangle is: " + b);
+    } else if (name.equals("Triangle")) {
+      if (height != 0 && base != 0) {
+        double c = (0.5 * base * height);
+        System.out.println("The area of the Triangle is: " + c);
+      } else {
+        double d = (s1 + s2 + s3) / 2.0;
+        double area = Math.sqrt(d * (d - s1) * (d - s2) * (d - s3));
+        System.out.printf("The area of the Triangle is: %.2f\n", area);
+      }
+
+    }
+
+  }
+}
+
+
+
+Task_05==================================================>
+
+
+
+class Triangle {
+  int s1;
+  int s2;
+  int s3;
+  int sun1;
+
+  public Triangle(int s1, int s2, int s3) {
+    this.s1 = s1;
+    this.s2 = s2;
+    this.s3 = s3;
+
+  }
+
+  public void triangleDetails() {
+    System.out.println("There sides of the triangle are: " + s1 + " ," + s2 + " ," + s3);
+    sun1 = (s1 + s2 + s3);
+    System.out.println("Perimeter: " + sun1);
+
+  }
+
+  public String printTriangleType() {
+    if (s1 == s2 && s2 == s3) {
+      return "This is an Equilateral Triangle.";
+    } else if (s1 == s2 || s2 == s3 || s3 == s1) {
+      return "This is a Scalene Triangle.";
+    } else {
+      return "This is a Scalene Triangle.";
+    }
+  }
+
+  public boolean objectSun(Triangle same) {
+    return this == same;
+
+  }
+
+  public void compareTrinagles(Triangle same) {
+
+    if (objectSun(same)) {
+      System.out.println("These two triangle objects have the same address.");
+    } else if (s1 == same.s1 && s2 == same.s2 && s3 == same.s3) {
+      System.out.println("Addresses are different but the sides of the triangles are equal.");
+
+    } else if (this.sun1 == same.sun1) {
+      System.out.println(" Only the perimeter of both triangles is equal.");
+
+    } else {
+      System.out.println("Addresses, length of the sides and perimeter all are different.");
+    }
+
+  }
+
+}
+
+
+
+Task_06================================================>
+
+
+
+class Course {
+  public String name;
+
+  public Course(String name) {
+    this.name = name;
+  }
+
+  public String toString() {
+    return name;
+  }
+}
+
+/////////////////////
+
+class Teacher {
+  public String name, tital;
+  Course courses[] = new Course[3];
+  int count = 0;
+
+  public Teacher(String name, String tital) {
+    this.name = name;
+    this.tital = tital;
+    System.out.println("A new teacher has been created");
+  }
+
+  public void addCourse(Course course_2) {
+    if (count < 3) {
+      courses[count] = course_2;
+      count++;
+    }
+  }
+
+  public void printDetail() {
+    System.out.println("Name: " + name);
+    System.out.println("Initial: " + tital);
+    System.out.println("List of courses: ");
+    sun();
+
+  }
+
+  public void sun() {
+    for (int p = 0; p < count; p++) {
+      System.out.println(courses[p]);
+    }
+  }
+}
+
+
+
+
