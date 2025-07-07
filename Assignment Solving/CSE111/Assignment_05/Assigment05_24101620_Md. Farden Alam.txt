@@ -1,0 +1,108 @@
+Assignment_05
+ID-24101620
+/=============================================>
+
+class Song {
+  public String sun;
+  public String sun_1;
+  public int sun_2;
+  public Song next;
+
+  public Song(String name, String name_2, int name_3) {
+    this.sun = name;
+    this.sun_1 = name_2;
+    this.sun_2 = name_3;
+    this.next = null;
+
+  }
+
+  public void songInfo() {
+    System.out.println("Title: " + sun + ", " + "Artist: " + sun_1 + ", " + "Length: " + sun_2 + " minutes");
+
+  }
+}
+
+
+
+============================================================================>
+
+class Playlist {
+  public String name;
+  public int count;
+  Song start;
+
+  public Playlist(String name) {
+    this.name = name;
+    System.out.println(name + " " + "created.");
+
+  }
+
+  public Playlist() {
+    this.start = null;
+  }
+
+  public void info() {
+    System.out.println(name + " " + "has the following songs: ");
+
+    if (start == null) {
+      System.out.println("No songs in" + " " + name + ".");
+    } else {
+      Song temp = start;
+      count = 1;
+      while (temp != null) {
+        System.out.println("Song - " + count);
+        temp.songInfo();
+        temp = temp.next;
+        count++;
+
+      }
+
+    }
+
+  }
+
+  public void addSong(Song song) {
+    if (start == null) {
+      start = song;
+    } else {
+      Sun(start, song);
+
+    }
+    song.next = null;
+    count++;
+    System.out.println(song.sun + " " + "added to " + name + ".");
+
+  }
+
+  public void Sun(Song start, Song song) {
+    if (start.next == null) {
+      start.next = song;
+    } else {
+      Sun(start.next, song);
+    }
+  }
+
+  public int totalSong() {
+    int count = 0;
+    Song temp = start;
+    while (temp != null) {
+      count++;
+      temp = temp.next;
+    }
+    return count;
+  }
+
+  public void playSong(String name) {
+    Song temp = start;
+    while (temp != null) {
+      if (temp.sun.equals(name)) {
+        System.out.println("Playing " + temp.sun + " by " + temp.sun_1 + ".");
+        return;
+      }
+      temp = temp.next;
+    }
+    System.out.println(name + " not found in " + this.name + ".");
+  }
+}
+
+
