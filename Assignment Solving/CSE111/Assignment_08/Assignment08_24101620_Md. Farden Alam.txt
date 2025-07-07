@@ -1,0 +1,219 @@
+//Assignment_08
+ID: 24101620
+
+
+Task_01>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class BBAStudent extends Student {
+  public BBAStudent() {
+    this("Default");
+  }
+
+  public BBAStudent(String name) {
+    setDepartment("BBA");
+    setName(name);
+    // super(name);
+  }
+}
+
+
+Task_02>>>>>>>>>>>>>>>>>>>>>>>>
+
+class CheckingAccount extends Account {
+  public static int count = 0;
+
+  public CheckingAccount() {
+    this(0.0);
+  }
+
+  public CheckingAccount(double balance) {
+    super(balance);
+    Sun();
+  }
+
+  public void Sun() {
+    count++;
+  }
+}
+
+
+Task_04>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class Vehicle2010 extends Vehicle {
+
+  public void Sun01() {
+    moveLeft();
+    moveDown();
+
+  }
+
+  public void moveLowerLeft() {
+    Sun01();
+  }
+
+  public void Sun02() {
+    moveUp();
+    moveRight();
+
+  }
+
+  public void moveUpperRight() {
+    Sun02();
+  }
+
+  public void Sun03() {
+    moveDown();
+    moveRight();
+
+  }
+
+  public void moveLowerRight() {
+    Sun03();
+  }
+
+  public String toString() {
+    return super.toString();
+  }
+}
+
+
+Task_03>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+For Dog>>
+
+class Dog extends Animal {
+  public String food;
+
+  public Dog(String name, int age, String color, String breed) {
+    super(name, age, color);
+    this.food = breed;
+  }
+
+  public String Sun01() {
+    return super.info() + "Breed: " + food + "\n";
+  }
+
+  public void Sun02() {
+    System.out.println(color + " color " + name + " is barking");
+  }
+
+  public void makeSound() {
+    Sun02();
+  }
+
+  public String info() {
+    return Sun01();
+
+  }
+}
+
+
+For Cat>>
+
+class Cat extends Animal {
+  public String food;
+
+  public Cat(String name, int age, String color, String breed) {
+    super(name, age, color);
+    this.food = breed;
+  }
+
+  public void Sun01() {
+    System.out.println(color + " color " + name + " is meowing");
+  }
+
+  public void makeSound() {
+    Sun01();
+  }
+
+  public String Sun02() {
+    return super.info() + "Breed: " + food + "\n";
+  }
+
+  public String info() {
+    return Sun02();
+  }
+}
+
+
+Task_05>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+class ComplexNumber extends RealNumber {
+  private double num;
+
+  public ComplexNumber() {
+    super(1.0);
+    this.num = 1.0;
+  }
+
+public double Star() {
+    return imaginaryPart;
+  }
+
+  public ComplexNumber(double realPart, double imaginaryPart) {
+    super(realPart);
+    this.num = imaginaryPart;
+  }
+
+  public String toString() {
+    return "RealPart: " + realValue + "\nImaginaryPart: " + Star();
+  }
+}
+
+
+Test_06>>>>>>>>>>>>>>>>>>>>>
+
+
+class Developer extends Employee {
+  private String sun;
+
+  public Developer(String name, double baseSalary, int hoursWorked, String sun) {
+    super(name, baseSalary, hoursWorked);
+    this.sun = sun;
+  }
+
+  public void displayInfo() {
+    super.displayInfo();
+    System.out.println("Language: " + sun);
+  }
+
+  public void calculateSalary() {
+    double finalSalary = getBaseSalary();
+    if (sun.equals("Java")) {
+      finalSalary += (getHoursWorked() * 14);
+    }
+    System.out.println("Final Salary: $" + (finalSalary));
+  }
+
+}
+
+
+
+class Manager extends Employee {
+  private double bonus;
+
+  public Manager(String name, double baseSalary, int hoursWorked, double bonus) {
+    super(name, baseSalary, hoursWorked);
+    this.bonus = bonus;
+  }
+
+  public void requestIncrement(double amount) {
+    if (getHoursWorked() >= 80) {
+      setBaseSalary(getBaseSalary() + amount);
+      System.out.println("$" + (int) amount + " Increment approved.");
+    } else {
+      System.out.println("Increment denied.");
+    }
+  }
+
+  public void calculateSalary() {
+    double finalSalary = getBaseSalary() + (getBaseSalary() * bonus / 100);
+    System.out.println("Bonus: " + bonus + " %");
+    System.out.println("Final Salary: $" + finalSalary);
+  }
+
+}
+
+///////////////////
