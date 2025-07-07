@@ -1,0 +1,212 @@
+//Assignment:01
+//Id:24101620
+//sec:14
+
+
+//Task_01>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Assignment Task 01: Container with Most Water
+class AssgnTask1{
+
+    //Complete this method so that it gives the Expected Output
+    //YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
+    public static void mostWater( Integer[] height ){
+
+        //TO DO
+int node=0,i=0,j=0,hight=0,k=0;
+
+     for (; i < height.length; i++) {
+        for (j = i + 1; j < height.length; j++) {
+           for (k = 0; k < 2; k++) {
+                if (k == 0) {
+                    hight = height[i];
+                }
+                 else if( height[j] < hight){
+                    hight = height[j];
+                }
+               else{
+                  //return 0;
+                }
+            }
+
+           
+           int area = hight * (j - i);
+
+            if (area > node) {
+                node = area;
+            }
+            else{
+               // break;
+            }
+        }
+    }
+
+    System.out.println(node);
+}
+
+
+//Task_02>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Assignment Task 02: Row Rotation Policy
+class AssgnTask2{
+
+    //Complete this method so that it gives the Expected Output
+    //YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
+
+    public static Integer rowRotation( Integer examWeek, String[][] matrix ){
+        int a = 0, b = 0, c = 0, i = 0, j = 0, k = 0, x = 0, y = 0, z = 0;
+
+        for (a = 0; a < 1; a++) {
+            j = matrix.length;
+        }
+
+        for (a = 0; a < 1; a++) {
+            k = matrix[0].length;
+        }
+
+        for (a = 0; a < 1; a++) {
+            y = examWeek;
+            y += - 1;
+        }
+
+        for (a = 0; a < 1; a++) {
+            x = y % j;
+        }
+
+
+        for (i = 0; i < x; i++) {
+        for (a = j - 1; a > 0; a--) {
+            for (b = 0; b < k; b++) {
+                String empty = matrix[a][b];
+                matrix[a][b] = matrix[a - 1][b];
+                matrix[a - 1][b] = empty;
+            }
+        }
+    }
+
+    for (a = 0; a < j; a++) {
+        for (b = 0; b < k; b++) {
+            if (matrix[a][b].equals("AA")) {
+                z = a + 1;
+            }
+        }
+    }
+
+    for (a = 0; a < j; a++) {
+        System.out.print("| ");
+        for (b = 0; b < k; b++) {
+            String sun = matrix[a][b];
+            if (sun.length() == 1) {
+                sun += " ";
+            } else if (sun.length() == 2) {
+                sun += "";
+            }
+            System.out.print(sun + " "+"|"+" ");
+        }
+        System.out.println();
+    }
+
+    return z;
+}
+
+
+//Task_03>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Assignment Task 03: Matrix Compression
+class AssgnTask3{
+
+    //Complete this method so that it gives the Expected Output
+    //YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
+
+
+    public static Integer[][] compressMatrix( Integer[][] matrix ){
+        int i,j,m,n,up,down,left,right,sum;
+
+    Integer total[][]= new Integer[matrix.length/2][matrix[0].length/2];
+    for (i=0; i < matrix.length; i = i+2) {
+        for (j=0; j < matrix[0].length; j = j+2) {
+            
+            m= i/2;
+            n= j/2;
+
+            up=matrix[i][j];
+            down=matrix[i+1][j];
+            left=matrix[i][j+1];
+            right=matrix[i+1][j+1];
+            sum=up+down+left+right;
+
+            total [m][n]=sum;
+
+        }
+    }
+
+    return total;
+}
+
+
+
+//Task_04>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class AssgnTask4 {
+public static void playGame( Integer[][] arena ){
+
+    int x, y, k, z, sum;
+    k = arena.length; //I assign in a variable so that I can use it later.
+    z = arena[0].length; // also here.
+    sum = 0; //it will be 0 so that I can sum all at once.
+
+    //I like to use 2 loops=====
+
+    for(x = 0; x < k; x++) {
+        for(y = 0; y < z; y++) {
+             if(arena[x][y] % 50 == 0){
+
+                if(arena[x][y] != 0) {
+
+                    int count = 0;
+
+                    if(x > 0){
+
+                    if(arena[x-1][y] == 2) {
+                        count++;
+                    }
+                }
+
+                    if(x < k - 1){
+                    if(arena[x+1][y] == 2) {
+                        count++;
+                    }
+                }
+
+                    if(y > 0){
+                    if(arena[x][y-1] == 2) {{
+                        count++;
+                    }
+                }
+
+                    if(y < z - 1){
+                    if(arena[x][y+1] == 2) {
+                        count++;
+                    }
+                }
+            }
+
+                    sum = sum + count;
+                }
+            }
+        }
+    }
+
+    sum = sum * 2;
+    System.out.print("Points Gained: " + sum + ". ");
+    if(sum >= 10){
+        System.out.println("Your team has survived the game.");
+    } 
+    else if(sum<10){
+        System.out.println("Your team is out.");
+    }
+    else{
+       // break;
+    }
+}
+
