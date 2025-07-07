@@ -1,0 +1,88 @@
+Assignment_09:
+ID: 24101620
+
+Task_01>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+a)
+
+class Pokemon {
+  private String sun_1;
+
+  public Pokemon(String sun_1) {
+    this.sun_1 = sun_1;
+  }
+
+  public void attack(String sun_2, int sun_3) {
+    System.out.println(sun_1 + " uses " + sun_2 + " with power " + sun_3 + "!");
+  }
+
+  public void attack(String sun_2) {
+    System.out.println(sun_1 + " " + "uses " + sun_2 + "!");
+  }
+
+  public void attack() {
+    System.out.println(sun_1 + " " + "attacks with a basic move!");
+  }
+
+}
+
+b)
+It was a polymorphism depicted which is compile-time polymorphism and it was also known as method overloading.
+
+
+Task_02>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class Jackfruit extends Fruit {
+  public Jackfruit() {
+    super(false, "Jackfruit");
+  }
+
+  public String sun_2() {
+    String n = "Jackfruits are good for you";
+    System.out.println(n);
+    return n;
+  }
+
+  public String toString() {
+    return sun_2();
+  }
+}
+
+class Mango extends Fruit {
+  public Mango() {
+    super(true, "Mango");
+  }
+
+  public String sun() {
+    System.out.println("Mangos are bad for you");
+  }
+
+  public String toString() {
+    return sun();
+  }
+}
+
+
+Task_03>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class CSE111Student extends Student {
+  public String sun() {
+    return ("I love Java Programming");
+  }
+
+  public String shout() {
+    return sun();
+  }
+}
+
+class CSEStudent extends Student {
+  public CSEStudent() {
+    msg = "I want to transfer to CSE";
+  }
+}
+
+
+Task_04>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
